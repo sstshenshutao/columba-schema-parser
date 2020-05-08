@@ -1,0 +1,19 @@
+{
+  "name": "columba-schema-parser",
+  "version": "1.0.1",
+  "description": "Dynamic parser $schema part of lang columba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sstshenshutao/columba-schema-parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sstshenshutao/columba-schema-parser/issues"
+  },
+  "homepage": "https://github.com/sstshenshutao/columba-schema-parser#readme"
+}
