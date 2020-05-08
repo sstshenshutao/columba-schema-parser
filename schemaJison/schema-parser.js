@@ -71,13 +71,61 @@
     recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
   }
 */
-var parser = (function(){
-    var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,5],$V1=[1,6],$V2=[1,9],$V3=[1,10],$V4=[1,11],$V5=[1,12],$V6=[1,13],$V7=[2,3],$V8=[1,26],$V9=[1,16],$Va=[1,17],$Vb=[1,18],$Vc=[1,19],$Vd=[1,20],$Ve=[1,21],$Vf=[1,22],$Vg=[1,23],$Vh=[1,24],$Vi=[1,25],$Vj=[1,27],$Vk=[1,4,8,9,10,11,12,13,14,15,16,17,18],$Vl=[1,31];
-    var parser = {trace: function trace () { },
+var parser = (function () {
+    var o = function (k, v, o, l) {
+            for (o = o || {}, l = k.length; l--; o[k[l]] = v) ;
+            return o
+        }, $V0 = [1, 4], $V1 = [2, 3], $V2 = [1, 17], $V3 = [1, 7], $V4 = [1, 8], $V5 = [1, 9], $V6 = [1, 10],
+        $V7 = [1, 11], $V8 = [1, 12], $V9 = [1, 13], $Va = [1, 14], $Vb = [1, 15], $Vc = [1, 16], $Vd = [1, 18],
+        $Ve = [1, 22], $Vf = [1, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], $Vg = [1, 29], $Vh = [1, 30],
+        $Vi = [1, 33], $Vj = [1, 34], $Vk = [1, 35], $Vl = [1, 36], $Vm = [14, 16, 17];
+    var parser = {
+        trace: function trace() {
+        },
         yy: {},
-        symbols_: {"error":2,"useObject":3,"COLON":4,"JSON":5,"others":6,"other":7,"STRING":8,"NUMBER":9,"TRUE":10,"FALSE":11,"NULL":12,"O_BEGIN":13,"O_END":14,"A_BEGIN":15,"A_END":16,"COMMA":17,"INVALID":18,"VALUE":19,"OBJECT":20,"MEMBERS":21,"MEMBER":22,"ARRAY":23,"ELEMENTS":24,"$accept":0,"$end":1},
-        terminals_: {2:"error",4:"COLON",8:"STRING",9:"NUMBER",10:"TRUE",11:"FALSE",12:"NULL",13:"O_BEGIN",14:"O_END",15:"A_BEGIN",16:"A_END",17:"COMMA",18:"INVALID"},
-        productions_: [0,[3,3],[6,2],[6,0],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[7,1],[5,1],[20,2],[20,3],[21,1],[21,3],[22,3],[23,2],[23,3],[24,1],[24,3],[19,1],[19,1],[19,1],[19,1],[19,1],[19,1],[19,1]],
+        symbols_: {
+            "error": 2,
+            "useObject": 3,
+            "COLON": 4,
+            "OBJECT": 5,
+            "others": 6,
+            "other": 7,
+            "STRING": 8,
+            "NUMBER": 9,
+            "TRUE": 10,
+            "FALSE": 11,
+            "NULL": 12,
+            "O_BEGIN": 13,
+            "O_END": 14,
+            "A_BEGIN": 15,
+            "A_END": 16,
+            "COMMA": 17,
+            "INVALID": 18,
+            "JSON": 19,
+            "VALUE": 20,
+            "MEMBERS": 21,
+            "MEMBER": 22,
+            "ARRAY": 23,
+            "ELEMENTS": 24,
+            "$accept": 0,
+            "$end": 1
+        },
+        terminals_: {
+            2: "error",
+            4: "COLON",
+            8: "STRING",
+            9: "NUMBER",
+            10: "TRUE",
+            11: "FALSE",
+            12: "NULL",
+            13: "O_BEGIN",
+            14: "O_END",
+            15: "A_BEGIN",
+            16: "A_END",
+            17: "COMMA",
+            18: "INVALID"
+        },
+        productions_: [0, [3, 3], [6, 2], [6, 0], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [19, 1], [5, 2], [5, 3], [21, 1], [21, 3], [22, 3], [23, 2], [23, 3], [24, 1], [24, 3], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1]],
         performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
             /* this == yyval */
 
@@ -85,7 +133,7 @@ var parser = (function(){
             switch (yystate) {
                 case 1:
 
-                    return $$[$0-1];
+                    return $$[$0 - 1];
 
                     break;
                 case 16:
@@ -100,22 +148,24 @@ var parser = (function(){
                     break;
                 case 18:
 
-                    this.$ = '{'+$$[$0-1]+'}';
+                    this.$ = '{' + $$[$0 - 1] + '}';
 
                     break;
-                case 19: case 24:
+                case 19:
+                case 24:
 
                     this.$ = $$[$0];
 
                     break;
-                case 20: case 25:
+                case 20:
+                case 25:
 
-                    this.$ = $$[$0-2]+','+$$[$0];
+                    this.$ = $$[$0 - 2] + ',' + $$[$0];
 
                     break;
                 case 21:
 
-                    this.$ = $$[$0-2]+':'+$$[$0];
+                    this.$ = $$[$0 - 2] + ':' + $$[$0];
 
                     break;
                 case 22:
@@ -125,29 +175,102 @@ var parser = (function(){
                     break;
                 case 23:
 
-                    this.$ = '['+$$[$0-1]+']';
+                    this.$ = '[' + $$[$0 - 1] + ']';
 
                     break;
-                case 26: case 27:
-                    this.$=yytext;
+                case 26:
+                case 27:
+                    this.$ = yytext;
                     break;
-                case 28: case 29:
-                    this.$=$$[$0];
+                case 28:
+                case 29:
+                    this.$ = $$[$0];
                     break;
                 case 30:
-                    this.$="true";
+                    this.$ = "true";
                     break;
                 case 31:
-                    this.$="false";
+                    this.$ = "false";
                     break;
                 case 32:
-                    this.$="null";
+                    this.$ = "null";
                     break;
             }
         },
-        table: [{3:1,4:[1,2]},{1:[3]},{5:3,8:$V0,9:$V1,10:$V2,11:$V3,12:$V4,13:$V5,15:$V6,19:4,20:7,23:8},{1:$V7,4:$V8,6:14,7:15,8:$V9,9:$Va,10:$Vb,11:$Vc,12:$Vd,13:$Ve,14:$Vf,15:$Vg,16:$Vh,17:$Vi,18:$Vj},o($Vk,[2,16]),o($Vk,[2,26]),o($Vk,[2,27]),o($Vk,[2,28]),o($Vk,[2,29]),o($Vk,[2,30]),o($Vk,[2,31]),o($Vk,[2,32]),{8:$Vl,14:[1,28],21:29,22:30},{8:$V0,9:$V1,10:$V2,11:$V3,12:$V4,13:$V5,15:$V6,16:[1,32],19:34,20:7,23:8,24:33},{1:[2,1]},{1:$V7,4:$V8,6:35,7:15,8:$V9,9:$Va,10:$Vb,11:$Vc,12:$Vd,13:$Ve,14:$Vf,15:$Vg,16:$Vh,17:$Vi,18:$Vj},o($Vk,[2,4]),o($Vk,[2,5]),o($Vk,[2,6]),o($Vk,[2,7]),o($Vk,[2,8]),o($Vk,[2,9]),o($Vk,[2,10]),o($Vk,[2,11]),o($Vk,[2,12]),o($Vk,[2,13]),o($Vk,[2,14]),o($Vk,[2,15]),o($Vk,[2,17]),{14:[1,36]},{14:[2,19],17:[1,37]},{4:[1,38]},o($Vk,[2,22]),{16:[1,39]},{16:[2,24],17:[1,40]},{1:[2,2]},o($Vk,[2,18]),{8:$Vl,21:41,22:30},{8:$V0,9:$V1,10:$V2,11:$V3,12:$V4,13:$V5,15:$V6,19:42,20:7,23:8},o($Vk,[2,23]),{8:$V0,9:$V1,10:$V2,11:$V3,12:$V4,13:$V5,15:$V6,19:34,20:7,23:8,24:43},{14:[2,20]},o([14,17],[2,21]),{16:[2,25]}],
-        defaultActions: {14:[2,1],35:[2,2],41:[2,20],43:[2,25]},
-        parseError: function parseError (str, hash) {
+        table: [{3: 1, 4: [1, 2]}, {1: [3]}, {5: 3, 13: $V0}, {
+            1: $V1,
+            4: $V2,
+            6: 5,
+            7: 6,
+            8: $V3,
+            9: $V4,
+            10: $V5,
+            11: $V6,
+            12: $V7,
+            13: $V8,
+            14: $V9,
+            15: $Va,
+            16: $Vb,
+            17: $Vc,
+            18: $Vd
+        }, {8: $Ve, 14: [1, 19], 21: 20, 22: 21}, {1: [2, 1]}, {
+            1: $V1,
+            4: $V2,
+            6: 23,
+            7: 6,
+            8: $V3,
+            9: $V4,
+            10: $V5,
+            11: $V6,
+            12: $V7,
+            13: $V8,
+            14: $V9,
+            15: $Va,
+            16: $Vb,
+            17: $Vc,
+            18: $Vd
+        }, o($Vf, [2, 4]), o($Vf, [2, 5]), o($Vf, [2, 6]), o($Vf, [2, 7]), o($Vf, [2, 8]), o($Vf, [2, 9]), o($Vf, [2, 10]), o($Vf, [2, 11]), o($Vf, [2, 12]), o($Vf, [2, 13]), o($Vf, [2, 14]), o($Vf, [2, 15]), o($Vf, [2, 17]), {14: [1, 24]}, {
+            14: [2, 19],
+            17: [1, 25]
+        }, {4: [1, 26]}, {1: [2, 2]}, o($Vf, [2, 18]), {8: $Ve, 21: 27, 22: 21}, {
+            5: 31,
+            8: $Vg,
+            9: $Vh,
+            10: $Vi,
+            11: $Vj,
+            12: $Vk,
+            13: $V0,
+            15: $Vl,
+            20: 28,
+            23: 32
+        }, {14: [2, 20]}, o([14, 17], [2, 21]), o($Vm, [2, 26]), o($Vm, [2, 27]), o($Vm, [2, 28]), o($Vm, [2, 29]), o($Vm, [2, 30]), o($Vm, [2, 31]), o($Vm, [2, 32]), {
+            5: 31,
+            8: $Vg,
+            9: $Vh,
+            10: $Vi,
+            11: $Vj,
+            12: $Vk,
+            13: $V0,
+            15: $Vl,
+            16: [1, 37],
+            20: 39,
+            23: 32,
+            24: 38
+        }, o($Vm, [2, 22]), {16: [1, 40]}, {16: [2, 24], 17: [1, 41]}, o($Vm, [2, 23]), {
+            5: 31,
+            8: $Vg,
+            9: $Vh,
+            10: $Vi,
+            11: $Vj,
+            12: $Vk,
+            13: $V0,
+            15: $Vl,
+            20: 39,
+            23: 32,
+            24: 42
+        }, {16: [2, 25]}],
+        defaultActions: {5: [2, 1], 23: [2, 2], 27: [2, 20], 42: [2, 25]},
+        parseError: function parseError(str, hash) {
             if (hash.recoverable) {
                 this.trace(str);
             } else {
@@ -157,10 +280,11 @@ var parser = (function(){
             }
         },
         parse: function parse(input) {
-            var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '', yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
+            var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '',
+                yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
             var args = lstack.slice.call(arguments, 1);
             var lexer = Object.create(this.lexer);
-            var sharedState = { yy: {} };
+            var sharedState = {yy: {}};
             for (var k in this.yy) {
                 if (Object.prototype.hasOwnProperty.call(this.yy, k)) {
                     sharedState.yy[k] = this.yy[k];
@@ -180,11 +304,13 @@ var parser = (function(){
             } else {
                 this.parseError = Object.getPrototypeOf(this).parseError;
             }
+
             function popStack(n) {
                 stack.length = stack.length - 2 * n;
                 vstack.length = vstack.length - n;
                 lstack.length = lstack.length - n;
             }
+
             _token_stack:
                 var lex = function () {
                     var token;
@@ -292,14 +418,15 @@ var parser = (function(){
                 }
             }
             return true;
-        }};
+        }
+    };
     /* generated by jison-lex 0.3.4 */
-    var lexer = (function(){
+    var lexer = (function () {
         var lexer = ({
 
-            EOF:1,
+            EOF: 1,
 
-            parseError:function parseError(str, hash) {
+            parseError: function parseError(str, hash) {
                 if (this.yy.parser) {
                     this.yy.parser.parseError(str, hash);
                 } else {
@@ -308,7 +435,7 @@ var parser = (function(){
             },
 
 // resets the lexer, sets new input
-            setInput:function (input, yy) {
+            setInput: function (input, yy) {
                 this.yy = yy || this.yy || {};
                 this._input = input;
                 this._more = this._backtrack = this.done = false;
@@ -322,14 +449,14 @@ var parser = (function(){
                     last_column: 0
                 };
                 if (this.options.ranges) {
-                    this.yylloc.range = [0,0];
+                    this.yylloc.range = [0, 0];
                 }
                 this.offset = 0;
                 return this;
             },
 
 // consumes and returns one char from the input
-            input:function () {
+            input: function () {
                 var ch = this._input[0];
                 this.yytext += ch;
                 this.yyleng++;
@@ -352,7 +479,7 @@ var parser = (function(){
             },
 
 // unshifts one char (or a string) into the input
-            unput:function (ch) {
+            unput: function (ch) {
                 var len = ch.length;
                 var lines = ch.split(/(?:\r\n?|\n)/g);
 
@@ -387,13 +514,13 @@ var parser = (function(){
             },
 
 // When called from action, caches matched text and appends it on next action
-            more:function () {
+            more: function () {
                 this._more = true;
                 return this;
             },
 
 // When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-            reject:function () {
+            reject: function () {
                 if (this.options.backtrack_lexer) {
                     this._backtrack = true;
                 } else {
@@ -408,34 +535,34 @@ var parser = (function(){
             },
 
 // retain first n characters of the match
-            less:function (n) {
+            less: function (n) {
                 this.unput(this.match.slice(n));
             },
 
 // displays already matched input, i.e. for error messages
-            pastInput:function () {
+            pastInput: function () {
                 var past = this.matched.substr(0, this.matched.length - this.match.length);
-                return (past.length > 20 ? '...':'') + past.substr(-20).replace(/\n/g, "");
+                return (past.length > 20 ? '...' : '') + past.substr(-20).replace(/\n/g, "");
             },
 
 // displays upcoming input, i.e. for error messages
-            upcomingInput:function () {
+            upcomingInput: function () {
                 var next = this.match;
                 if (next.length < 20) {
-                    next += this._input.substr(0, 20-next.length);
+                    next += this._input.substr(0, 20 - next.length);
                 }
-                return (next.substr(0,20) + (next.length > 20 ? '...' : '')).replace(/\n/g, "");
+                return (next.substr(0, 20) + (next.length > 20 ? '...' : '')).replace(/\n/g, "");
             },
 
 // displays the character position where the lexing error occurred, i.e. for error messages
-            showPosition:function () {
+            showPosition: function () {
                 var pre = this.pastInput();
                 var c = new Array(pre.length + 1).join("-");
                 return pre + this.upcomingInput() + "\n" + c + "^";
             },
 
 // test the lexed token: return FALSE when not a match, otherwise return token
-            test_match:function(match, indexed_rule) {
+            test_match: function (match, indexed_rule) {
                 var token,
                     lines,
                     backup;
@@ -507,7 +634,7 @@ var parser = (function(){
             },
 
 // return next match in input
-            next:function () {
+            next: function () {
                 if (this.done) {
                     return this.EOF;
                 }
@@ -565,7 +692,7 @@ var parser = (function(){
             },
 
 // return next match that has a token
-            lex:function lex () {
+            lex: function lex() {
                 var r = this.next();
                 if (r) {
                     return r;
@@ -575,12 +702,12 @@ var parser = (function(){
             },
 
 // activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-            begin:function begin (condition) {
+            begin: function begin(condition) {
                 this.conditionStack.push(condition);
             },
 
 // pop the previously active lexer condition state off the condition stack
-            popState:function popState () {
+            popState: function popState() {
                 var n = this.conditionStack.length - 1;
                 if (n > 0) {
                     return this.conditionStack.pop();
@@ -590,7 +717,7 @@ var parser = (function(){
             },
 
 // produce the lexer rule set which is active for the currently active lexer condition state
-            _currentRules:function _currentRules () {
+            _currentRules: function _currentRules() {
                 if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
                     return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
                 } else {
@@ -599,7 +726,7 @@ var parser = (function(){
             },
 
 // return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-            topState:function topState (n) {
+            topState: function topState(n) {
                 n = this.conditionStack.length - 1 - Math.abs(n || 0);
                 if (n >= 0) {
                     return this.conditionStack[n];
@@ -609,54 +736,88 @@ var parser = (function(){
             },
 
 // alias for begin(condition)
-            pushState:function pushState (condition) {
+            pushState: function pushState(condition) {
                 this.begin(condition);
             },
 
 // return the number of states currently on the stack
-            stateStackSize:function stateStackSize() {
+            stateStackSize: function stateStackSize() {
                 return this.conditionStack.length;
             },
             options: {},
-            performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
-                var YYSTATE=YY_START;
-                switch($avoiding_name_collisions) {
-                    case 0:return 8
+            performAction: function anonymous(yy, yy_, $avoiding_name_collisions, YY_START) {
+                var YYSTATE = YY_START;
+                switch ($avoiding_name_collisions) {
+                    case 0:
+                        return 8
                         break;
-                    case 1:return 9
+                    case 1:
+                        return 9
                         break;
-                    case 2:return 10
+                    case 2:
+                        return 10
                         break;
-                    case 3:return 11
+                    case 3:
+                        return 11
                         break;
-                    case 4:return 12
+                    case 4:
+                        return 12
                         break;
-                    case 5:return 13
+                    case 5:
+                        return 13
                         break;
-                    case 6:return 14
+                    case 6:
+                        return 14
                         break;
-                    case 7:return 15
+                    case 7:
+                        return 15
                         break;
-                    case 8:return 16
+                    case 8:
+                        return 16
                         break;
-                    case 9:return 17
+                    case 9:
+                        return 17
                         break;
-                    case 10:return 4
+                    case 10:
+                        return 4
                         break;
                     case 11:/* ignore whitespace */
                         break;
                 }
             },
-            rules: [/^(?:(["])(["])|(["])((([ -!#-\[\]-~])|(\\["\\bfnrt/])|(\\))+)(["]))/,/^(?:((?:((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:\.((?:([0-9])+))))((?:([eE][+-]?)((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:([eE][+-]?)((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:\.((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9]))))))/,/^(?:true\b)/,/^(?:false\b)/,/^(?:null\b)/,/^(?:\{)/,/^(?:\})/,/^(?:\[)/,/^(?:\])/,/^(?:,)/,/^(?::)/,/^(?:[ \t\n]+)/],
-            conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11],"inclusive":true}}
+            rules: [/^(?:(["])(["])|(["])((([ -!#-\[\]-~])|(\\["\\bfnrt/])|(\\))+)(["]))/, /^(?:((?:((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:\.((?:([0-9])+))))((?:([eE][+-]?)((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:([eE][+-]?)((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9])))((?:\.((?:([0-9])+))))|((?:([1-9])((?:([0-9])+))|([0-9])|-([1-9])((?:([0-9])+))|-([0-9]))))))/, /^(?:true\b)/, /^(?:false\b)/, /^(?:null\b)/, /^(?:\{)/, /^(?:\})/, /^(?:\[)/, /^(?:\])/, /^(?:,)/, /^(?::)/, /^(?:[ \t\n]+)/],
+            conditions: {"INITIAL": {"rules": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "inclusive": true}}
         });
         return lexer;
     })();
     parser.lexer = lexer;
-    function Parser () {
+
+    function Parser() {
         this.yy = {};
     }
-    Parser.prototype = parser;parser.Parser = Parser;
+
+    Parser.prototype = parser;
+    parser.Parser = Parser;
     return new Parser;
 })();
-module.exports=parser;
+
+
+if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
+    exports.parser = parser;
+    exports.Parser = parser.Parser;
+    exports.parse = function () {
+        return parser.parse.apply(parser, arguments);
+    };
+    exports.main = function commonjsMain(args) {
+        if (!args[1]) {
+            console.log('Usage: ' + args[0] + ' FILE');
+            process.exit(1);
+        }
+        var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
+        return exports.parser.parse(source);
+    };
+    if (typeof module !== 'undefined' && require.main === module) {
+        exports.main(process.argv.slice(1));
+    }
+}
+module.exports = parser;
